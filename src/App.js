@@ -9,6 +9,11 @@ import { Error } from "./pages/Error";
 import { Contact } from "./pages/Contact";
 import { RestaurantMenu } from "./pages/RestaurantMenu";
 import { Profile } from "./pages/Profile";
+import { Suspense, lazy } from "react";
+import { Shimmer } from "./components/Shimmer";
+// import Instamart from "./pages/Instamart";
+
+const Instamart = lazy(() => import("./pages/Instamart"));
 
 export const App = () => {
   return (
@@ -33,10 +38,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-        children:[{
-          path:'profile',
-          element:<Profile/>
-        }]
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",
@@ -45,6 +52,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<Shimmer/>}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

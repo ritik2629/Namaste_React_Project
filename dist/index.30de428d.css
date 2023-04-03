@@ -35,13 +35,6 @@
   border-radius: 12px;
 }
 
-.shimmer-card {
-  width: 200px;
-  height: 200px;
-  background: #d3d3d3;
-  margin: 20px;
-}
-
 .search, .btn {
   width: 200px;
   border: 1px solid gray;
@@ -61,6 +54,13 @@
 .list {
   grid-template-columns: repeat(5, 1fr);
   display: grid;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 200px;
+  background: #d3d3d3;
+  margin: 20px;
 }
 
 /*# sourceMappingURL=index.30de428d.css.map */
