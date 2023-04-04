@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { RestaurantCard } from "../RestaurantCard";
 // import { foodList } from "../../constants";
-import "./style.css";
 import { Shimmer } from "../Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../../utils/helper";
@@ -17,16 +16,16 @@ export const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className=" my-5 p-3">
         <input
           type="text"
           placeholder="search here..."
-          className="search"
+          className=" py-2 border border-blue-700 rounded-lg p-3 outline-none focus:border-red-500 w-96"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="btn"
+          className=" bg-green-400 px-3 py-2 ml-3 rounded-lg hover:text-white hover:bg-blue-600"
           onClick={() => {
             const data = filterData(searchText, allResaturants);
             setFilterRestaurant(data);
@@ -35,7 +34,7 @@ export const Body = () => {
           Search
         </button>
       </div>
-      <div className="list">
+      <div className="grid grid-cols-5 m-6 gap-[20px]">
         {filtredRestaurant.map((item) => (
           <Link to={`/restaurant/${item.data.id}`} key={item.data.id}>
             <RestaurantCard {...item} />
