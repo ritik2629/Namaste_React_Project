@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import useResaurant from "../utils/useRestaurant";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../redux/features/cartSlice";
 
 export const RestaurantMenu = () => {
   const { id } = useParams();
 
   const { restaurant, menu } = useResaurant(id);
-  console.log(menu);
+  // console.log(menu);
+
+  const dispatch = useDispatch();
 
   return (
     <div className=" flex gap-10">
@@ -25,10 +29,25 @@ export const RestaurantMenu = () => {
         <h1 className=" font-semibold text-center text-2xl">Menu</h1>
         {menu.map((item) => {
           return (
-            <div className=" text-gray-500">
-              <ul>
-                <li>{item.card.info.name}</li>
-              </ul>
+            <div
+              className=" text-gray-500 flex gap-2 m-3 justify-between"
+              key={Math.random()}
+            >
+              <p>{item.card.info.name}</p>
+              <div>
+                <button
+                  className=" bg-blue-500 py-1 rounded-md p-2 text-black hover:text-white"
+                  onClick={() => dispatch(addItem(item))}
+                >
+                  Add
+                </button>
+                <button
+                  className=" bg-red-500 py-1 mx-6 rounded-md p-2 text-black hover:text-white"
+                  onClick={() => dispatch(removeItem(item))}
+                >
+                  Remove
+                </button>
+              </div>
             </div>
           );
         })}

@@ -11,9 +11,8 @@ export const RestaurantCard = (props) => {
           className=" rounded-lg shadow-lg h-40"
         />
         <h3 className=" font-semibold text-lg">{props.data.name}</h3>
-        {/* <h3 className=" font-semibold text-sm">{props.data.cuisines.join(",")}</h3> */}
         <h4 className=" text-gray-800"> Delivered in:{props.data.sla.deliveryTime} min</h4>
-        <h4 className=" text-gray-600">{props.data.avgRating} stars</h4>
+        <h4 className=" bg-green-500 inline-block px-2 rounded-full text-black">{props.data.avgRating} stars</h4>
       </div>
     </>
   );

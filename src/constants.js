@@ -1,5 +1,5 @@
 export const IMG_CDN_URL ='https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_540,h_208,c_fit/'
-
+export const IMG_MENU_URL ='https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/'
 export const foodList = [
     {
       name: "chicken",
