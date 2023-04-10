@@ -1,6 +1,6 @@
 import { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
-import foodlogo from "../../assets/foodlogo.jpg";
+// import foodlogo from "../../assets/foodlogo.jpg";
 import useOnline from "../../utils/useOnline";
 import UserContext from "../../utils/UserContext";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ export const Header = () => {
   return (
     <div className=" flex justify-between bg-blue-400 shadow-lg">
       <a href="/">
-        <img src={foodlogo} alt="foodvilla" className=" w-32 h-24 p-1" />
+        <img src={"foodlogo"} alt="foodvilla" className=" w-32 h-24 p-1" />
       </a>
       <div>
         <ul className="flex py-10 text-white font-semibold text-md">
@@ -34,11 +34,11 @@ export const Header = () => {
             <Link to="/instamart">Instamart</Link>
           </li>
           <li className="px-3">
-            <Link to="/cart">Cart : {cartItem.length}-item</Link>
+            <Link to="/cart" data-testid='cart-status'>Cart : {cartItem.length}-item</Link>
           </li>
         </ul>
       </div>
-      {isOnline ? <h1 className=" py-10">online🟢</h1> :<h1>offline💥</h1> }
+      <h1 className=" py-10" data-testid="online-status">{isOnline ?"online🟢":"offline💥"}</h1>
       {<h2 className=" py-10 first-letter:uppercase text-lg font-semibold text-white">{user.name}</h2>}
       {/* {loggedIn ? (
         <div className=" border rounded-md" >

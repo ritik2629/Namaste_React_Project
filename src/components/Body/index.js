@@ -26,6 +26,7 @@ export const Body = () => {
         />
         <button
           className=" bg-green-400 px-3 py-2 ml-3 rounded-lg hover:text-white hover:bg-blue-600"
+          data-testid='search-btn'
           onClick={() => {
             const data = filterData(searchText, allResaturants);
             setFilterRestaurant(data);
@@ -34,7 +35,7 @@ export const Body = () => {
           Search
         </button>
       </div>
-      <div className="grid grid-cols-5 m-6 gap-[20px]">
+      <div className="grid grid-cols-5 m-6 gap-[20px]" data-testid='res-list'>
         {filtredRestaurant.map((item) => (
           <Link to={`/restaurant/${item.data.id}`} key={item.data.id}>
             <RestaurantCard {...item} />
