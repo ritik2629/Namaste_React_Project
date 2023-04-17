@@ -143,8 +143,8 @@
     }
   }
 })({"1xC6H":[function(require,module,exports) {
-var Refresh = require("e3281468c30e7fa3");
-var ErrorOverlay = require("355e9954f521c02f");
+var Refresh = require("da23f6c955405f01");
+var ErrorOverlay = require("c9386fbfab43ee81");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -163,7 +163,7 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"e3281468c30e7fa3":"786KC","355e9954f521c02f":"1dldy"}],"czjdF":[function(require,module,exports) {
+},{"da23f6c955405f01":"786KC","c9386fbfab43ee81":"1dldy"}],"czjdF":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -589,8 +589,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = exports.Section = void 0;
-var _react = require("51aa4293494c3120");
-var _jsxRuntime = require("9bfb4b42c176d171");
+var _react = require("2ece77b3567bd00f");
+var _jsxRuntime = require("11da24ae66bbcaa9");
 const Section = (props)=>{
     const { title , desc , isVisible , setIsVisible  } = props;
     function toggleHandler() {
@@ -668,6 +668,6 @@ $RefreshReg$(_c1, "Instamart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"51aa4293494c3120":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","9bfb4b42c176d171":"6AEwr"}]},["1xC6H","czjdF"], null, "parcelRequire48a1")
+},{"2ece77b3567bd00f":"21dqq","11da24ae66bbcaa9":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","czjdF"], null, "parcelRequire48a1")
 
 //# sourceMappingURL=Instamart.1b3064f7.js.map

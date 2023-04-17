@@ -1,7 +1,0 @@
-
-{
-    "presets": [
-        ["@babel/preset-env", {"targets": {"node": "current"}}],  //for understanding import 
-        ["@babel/preset-react",{"runtime":"automatic"}] //for understanding jsx
-    ]
-}
